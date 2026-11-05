@@ -5,31 +5,45 @@ import type {
   InterviewQuestionsRequest,
   InterviewQuestionsResponse,
 } from '@app-starter/shared';
-import {
-  VENDOR_INTERVIEW_QUESTIONS,
-  VENDOR_KNOWLEDGE_DOCUMENT,
-  VENDOR_SUGGESTED_ANSWERS,
-} from '@/data/handoff-demo';
+import { DEMO_INTERVIEW_PLANS } from '@/data/handoff-demo';
 
 type InterviewRequest = InterviewQuestionsRequest | CompleteInterviewRequest;
+type InterviewResponse =
+  | InterviewQuestionsResponse
+  | CompleteInterviewResponse
+  | { message: string };
 
-export const POST = async (
-  request: NextRequest,
-): Promise<NextResponse<InterviewQuestionsResponse | CompleteInterviewResponse>> => {
+export const POST = async (request: NextRequest): Promise<NextResponse<InterviewResponse>> => {
   const body = (await request.json()) as InterviewRequest;
 
   await new Promise((resolve) => setTimeout(resolve, 350));
+  const plan = DEMO_INTERVIEW_PLANS[body.riskId];
+
+  if (!plan) {
+    return NextResponse.json(
+      { message: `No interview plan exists for risk ${body.riskId}.` },
+      { status: 404 },
+    );
+  }
 
   if (body.action === 'questions') {
     return NextResponse.json({
-      questions: [...VENDOR_INTERVIEW_QUESTIONS],
-      suggestedAnswers: [...VENDOR_SUGGESTED_ANSWERS],
+      objective: plan.objective,
+      questions: plan.questions.map((question) => ({
+        ...question,
+        evidenceFiles: [...question.evidenceFiles],
+      })),
+      suggestedAnswers: [...plan.suggestedAnswers],
     });
   }
 
+  const capturedAnswers = plan.questions
+    .map((question, index) => `## ${question.prompt}\n\n${body.answers[index] ?? 'Not captured.'}`)
+    .join('\n\n');
+
   return NextResponse.json({
-    filename: 'interview-corvid-sms.md',
-    title: 'Why Brightline uses Corvid SMS',
-    content: VENDOR_KNOWLEDGE_DOCUMENT,
+    filename: plan.filename,
+    title: plan.title,
+    content: plan.curatedContent ?? `# ${plan.title}\n\n${capturedAnswers}`,
   });
 };

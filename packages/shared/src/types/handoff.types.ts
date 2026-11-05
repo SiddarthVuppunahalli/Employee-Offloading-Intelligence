@@ -58,8 +58,16 @@ export interface CompleteInterviewRequest {
   answers: string[];
 }
 
+export interface InterviewQuestion {
+  id: string;
+  prompt: string;
+  rationale: string;
+  evidenceFiles: string[];
+}
+
 export interface InterviewQuestionsResponse {
-  questions: string[];
+  objective: string;
+  questions: InterviewQuestion[];
   suggestedAnswers: string[];
 }
 

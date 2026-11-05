@@ -473,25 +473,19 @@ const DemoPage = () => {
                     </Badge>
                   ))}
                 </div>
-                {selectedRisk.id === 'vendor-decision' ? (
-                  <Button
-                    onClick={handleStartInterview}
-                    disabled={isStartingInterview}
-                    className="w-full bg-slate-950 hover:bg-slate-800"
-                  >
-                    {isStartingInterview ? (
-                      <Loader2 className="animate-spin" />
-                    ) : (
-                      <MessageSquareText />
-                    )}
-                    Interview Sam about this gap
-                    <ArrowRight className="ml-auto" />
-                  </Button>
-                ) : (
-                  <p className="rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-500">
-                    The prepared live interview focuses on the Corvid SMS decision.
-                  </p>
-                )}
+                <Button
+                  onClick={handleStartInterview}
+                  disabled={isStartingInterview}
+                  className="w-full bg-slate-950 hover:bg-slate-800"
+                >
+                  {isStartingInterview ? (
+                    <Loader2 className="animate-spin" />
+                  ) : (
+                    <MessageSquareText />
+                  )}
+                  Interview Sam about this gap
+                  <ArrowRight className="ml-auto" />
+                </Button>
               </CardContent>
             </Card>
           )}
@@ -505,7 +499,7 @@ const DemoPage = () => {
                       <UserRoundCheck className="h-5 w-5" />
                     </div>
                     <div>
-                      <CardTitle className="text-base">Guided exit interview</CardTitle>
+                      <CardTitle className="text-base">Evidence-backed interview</CardTitle>
                       <p className="mt-1 text-xs text-slate-500">
                         Question {questionIndex + 1} of {interview.questions.length}
                       </p>
@@ -521,8 +515,33 @@ const DemoPage = () => {
                 />
               </CardHeader>
               <CardContent className="space-y-4 p-5">
+                {questionIndex === 0 && (
+                  <p className="rounded-lg border border-cyan-100 bg-cyan-50/60 px-3 py-2 text-xs leading-5 text-slate-600">
+                    <span className="font-semibold text-slate-800">Objective: </span>
+                    {interview.objective}
+                  </p>
+                )}
                 <div className="rounded-xl bg-slate-950 px-4 py-3 text-sm leading-6 text-white">
-                  {currentInterviewQuestion}
+                  {currentInterviewQuestion?.prompt}
+                </div>
+                <div className="space-y-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-violet-600">
+                    Why the brain is asking
+                  </p>
+                  <p className="text-xs leading-5 text-slate-600">
+                    {currentInterviewQuestion?.rationale}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {currentInterviewQuestion?.evidenceFiles.map((filename) => (
+                      <Badge
+                        key={filename}
+                        variant="outline"
+                        className="bg-white font-mono text-[9px] font-normal text-slate-500"
+                      >
+                        {filename}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
                 <Textarea
                   value={currentAnswer}
