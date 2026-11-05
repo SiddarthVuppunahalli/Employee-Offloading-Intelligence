@@ -1,10 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type {
   CitedAnswer,
   CompleteInterviewResponse,
   InterviewQuestionsResponse,
+  KnowledgeProviderStatus,
   KnowledgeRisk,
   KnowledgeScanResponse,
 } from '@app-starter/shared';
@@ -58,6 +59,16 @@ const DemoPage = () => {
   const [knowledgeDocument, setKnowledgeDocument] = useState<CompleteInterviewResponse | null>(
     null,
   );
+  const [providerStatus, setProviderStatus] = useState<KnowledgeProviderStatus | null>(null);
+
+  useEffect(() => {
+    const loadProviderStatus = async () => {
+      const response = await fetch('/api/demo/runtime', { cache: 'no-store' });
+      setProviderStatus((await response.json()) as KnowledgeProviderStatus);
+    };
+
+    void loadProviderStatus();
+  }, []);
 
   const selectedRisk = useMemo(
     () => risks.find((risk) => risk.id === selectedRiskId) ?? null,
@@ -73,6 +84,7 @@ const DemoPage = () => {
       const response = await fetch('/api/demo/scan', { method: 'POST' });
       const data = (await response.json()) as KnowledgeScanResponse;
       setRisks(data.risks);
+      setProviderStatus(data.provider);
       setSelectedRiskId(data.risks[0]?.id ?? null);
     } finally {
       setIsScanning(false);
@@ -168,9 +180,29 @@ const DemoPage = () => {
               <p className="text-xs text-slate-400">Brightline Logistics · Company Brain</p>
             </div>
           </div>
-          <Badge className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-200 hover:bg-cyan-400/10">
-            Live demo workspace
-          </Badge>
+          <div className="flex items-center gap-2">
+            {providerStatus && (
+              <Badge
+                className={cn(
+                  'border hover:bg-transparent',
+                  providerStatus.mode === 'TRIGGERWARE'
+                    ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200'
+                    : 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+                )}
+              >
+                <span
+                  className={cn(
+                    'mr-1.5 h-1.5 w-1.5 rounded-full',
+                    providerStatus.mode === 'TRIGGERWARE' ? 'bg-emerald-300' : 'bg-violet-300',
+                  )}
+                />
+                {providerStatus.label}
+              </Badge>
+            )}
+            <Badge className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-200 hover:bg-cyan-400/10">
+              Live demo workspace
+            </Badge>
+          </div>
         </div>
 
         <div className="mx-auto grid max-w-[1500px] gap-8 px-5 pb-8 pt-5 lg:grid-cols-[1fr_auto] lg:px-8">
@@ -234,6 +266,11 @@ const DemoPage = () => {
                     Compare Sam’s work with the rest of the team to find likely single points of
                     failure.
                   </p>
+                  {providerStatus && (
+                    <p className="mt-1.5 max-w-2xl text-xs text-slate-400">
+                      {providerStatus.detail}
+                    </p>
+                  )}
                 </div>
                 <Button
                   onClick={handleScan}

@@ -24,6 +24,16 @@ export interface KnowledgeScanResponse {
   employeeName: string;
   artifactsScanned: number;
   risks: KnowledgeRisk[];
+  provider: KnowledgeProviderStatus;
+}
+
+export type KnowledgeProviderMode = 'TRIGGERWARE' | 'DEMO';
+
+export interface KnowledgeProviderStatus {
+  mode: KnowledgeProviderMode;
+  label: string;
+  isConnected: boolean;
+  detail: string;
 }
 
 export interface CitedAnswer {
