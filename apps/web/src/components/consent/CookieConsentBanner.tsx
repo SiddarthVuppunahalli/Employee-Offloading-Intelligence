@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { hasUserMadeChoice, setConsentPreferences } from '@/lib/consent';
 import { CookiePreferencesModal } from './CookiePreferencesModal';
 import Link from 'next/link';
 
 export const CookieConsentBanner = () => {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -35,7 +37,7 @@ export const CookieConsentBanner = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || pathname.startsWith('/demo')) return null;
 
   return (
     <>

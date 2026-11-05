@@ -43,6 +43,12 @@ export function CustomDomainHeaderWrapper({
 }) {
   const pathname = usePathname();
 
+  // The hackathon demo supplies its own product chrome so the generic starter
+  // navigation does not compete with the three-minute story.
+  if (pathname.startsWith('/demo')) {
+    return null;
+  }
+
   // For non-white-label pages we skip auth checks entirely — always show header.
   // This avoids any unnecessary auth-related flash on normal pages.
   if (!isWhiteLabelCalendar) {

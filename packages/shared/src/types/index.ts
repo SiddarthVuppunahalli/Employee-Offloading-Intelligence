@@ -9,3 +9,6 @@ export * from './auth.types';
 
 // Organization types
 export * from './organization.types';
+
+// Knowledge handoff demo contracts
+export * from './handoff.types';
