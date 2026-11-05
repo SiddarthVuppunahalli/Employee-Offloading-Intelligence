@@ -170,61 +170,52 @@ const DemoPage = () => {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
       <header className="border-b border-white/10 bg-slate-950 text-white">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400 text-slate-950">
-              <BrainCircuit className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold tracking-wide">Knowledge Handoff</p>
-              <p className="text-xs text-slate-400">Brightline Logistics · Company Brain</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {providerStatus && (
-              <Badge
-                className={cn(
-                  'border hover:bg-transparent',
-                  providerStatus.mode === 'TRIGGERWARE'
-                    ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200'
-                    : 'border-violet-400/30 bg-violet-400/10 text-violet-200',
-                )}
-              >
-                <span
-                  className={cn(
-                    'mr-1.5 h-1.5 w-1.5 rounded-full',
-                    providerStatus.mode === 'TRIGGERWARE' ? 'bg-emerald-300' : 'bg-violet-300',
-                  )}
-                />
-                {providerStatus.label}
-              </Badge>
-            )}
-            <Badge className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-200 hover:bg-cyan-400/10">
-              Live demo workspace
-            </Badge>
-          </div>
-        </div>
-
-        <div className="mx-auto grid max-w-[1500px] gap-8 px-5 pb-8 pt-5 lg:grid-cols-[1fr_auto] lg:px-8">
-          <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-400 to-cyan-300 text-lg font-bold text-slate-950">
-              {DEMO_EMPLOYEE.initials}
-            </div>
-            <div>
-              <div className="mb-2 flex flex-wrap items-center gap-2">
-                <h1 className="text-2xl font-semibold tracking-tight">{DEMO_EMPLOYEE.name}</h1>
-                <Badge className="border border-amber-300/20 bg-amber-300/10 text-amber-200 hover:bg-amber-300/10">
-                  Notice given
-                </Badge>
+        <div className="mx-auto grid max-w-[1500px] items-center gap-5 px-5 py-5 lg:grid-cols-[1fr_auto] lg:px-8">
+          <div>
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-300">
+              Brightline Logistics / Offboarding case BL-024
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-bold text-cyan-200">
+                {DEMO_EMPLOYEE.initials}
               </div>
-              <p className="text-sm text-slate-300">
-                {DEMO_EMPLOYEE.title} · {DEMO_EMPLOYEE.team}
-              </p>
-              <p className="mt-1 text-xs text-slate-500">Final day {DEMO_EMPLOYEE.finalDay}</p>
+              <div>
+                <div className="mb-1 flex flex-wrap items-center gap-2">
+                  <h1 className="text-2xl font-semibold tracking-tight">{DEMO_EMPLOYEE.name}</h1>
+                  <Badge className="border border-amber-300/20 bg-amber-300/10 text-amber-200 hover:bg-amber-300/10">
+                    Notice given
+                  </Badge>
+                  {providerStatus && (
+                    <Badge
+                      className={cn(
+                        'border hover:bg-transparent',
+                        providerStatus.mode === 'TRIGGERWARE'
+                          ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200'
+                          : 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          'mr-1.5 h-1.5 w-1.5 rounded-full',
+                          providerStatus.mode === 'TRIGGERWARE'
+                            ? 'bg-emerald-300'
+                            : 'bg-violet-300',
+                        )}
+                      />
+                      {providerStatus.label}
+                    </Badge>
+                  )}
+                </div>
+                <p className="text-sm text-slate-300">
+                  {DEMO_EMPLOYEE.title} · {DEMO_EMPLOYEE.team}
+                  <span className="mx-2 text-slate-600">/</span>
+                  Final day {DEMO_EMPLOYEE.finalDay}
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 text-center">
+          <div className="grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 text-center">
             <Metric value={String(sourceCount)} label="Sources" />
             <Metric value={risks.length ? String(risks.length) : '—'} label="Risks" />
             <Metric
@@ -234,25 +225,25 @@ const DemoPage = () => {
             />
           </div>
         </div>
+
+        <div className="border-t border-white/10 bg-white/[0.025]">
+          <div className="mx-auto flex max-w-[1500px] items-center gap-2 overflow-x-auto px-5 py-2.5 lg:px-8">
+            <JourneyStep
+              number="1"
+              label="Ask before"
+              isComplete={answer !== null && !answer.isDocumented}
+            />
+            <ChevronRight className="h-4 w-4 shrink-0 text-slate-700" />
+            <JourneyStep number="2" label="Scan risks" isComplete={risks.length > 0} />
+            <ChevronRight className="h-4 w-4 shrink-0 text-slate-700" />
+            <JourneyStep number="3" label="Interview Sam" isComplete={knowledgeDocument !== null} />
+            <ChevronRight className="h-4 w-4 shrink-0 text-slate-700" />
+            <JourneyStep number="4" label="Ask again" isComplete={answer?.isDocumented === true} />
+          </div>
+        </div>
       </header>
 
-      <section className="border-b bg-white">
-        <div className="mx-auto flex max-w-[1500px] items-center gap-2 overflow-x-auto px-5 py-3 lg:px-8">
-          <JourneyStep
-            number="1"
-            label="Ask before"
-            isComplete={answer !== null && !answer.isDocumented}
-          />
-          <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
-          <JourneyStep number="2" label="Scan risks" isComplete={risks.length > 0} />
-          <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
-          <JourneyStep number="3" label="Interview Sam" isComplete={knowledgeDocument !== null} />
-          <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
-          <JourneyStep number="4" label="Ask again" isComplete={answer?.isDocumented === true} />
-        </div>
-      </section>
-
-      <div className="mx-auto grid max-w-[1500px] gap-6 px-5 py-6 xl:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:px-8">
+      <div className="mx-auto grid max-w-[1500px] items-start gap-5 px-5 py-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:px-8">
         <section className="space-y-5">
           <Card className="overflow-hidden border-slate-200 shadow-sm">
             <CardHeader className="border-b border-slate-100 bg-white pb-4">
@@ -290,7 +281,7 @@ const DemoPage = () => {
 
             <CardContent className="p-0">
               {risks.length === 0 ? (
-                <div className="flex flex-col items-center px-6 py-16 text-center">
+                <div className="flex flex-col items-center px-6 py-12 text-center">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-violet-600">
                     <Search className="h-6 w-6" />
                   </div>
@@ -310,7 +301,7 @@ const DemoPage = () => {
                         type="button"
                         onClick={() => setSelectedRiskId(risk.id)}
                         className={cn(
-                          'grid w-full grid-cols-[32px_1fr_auto] gap-3 px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-violet-500',
+                          'grid w-full grid-cols-[32px_1fr_auto] gap-3 px-5 py-3.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-violet-500',
                           isSelected ? 'bg-violet-50/70' : 'bg-white hover:bg-slate-50',
                         )}
                         aria-pressed={isSelected}
@@ -319,7 +310,7 @@ const DemoPage = () => {
                           {index + 1}
                         </span>
                         <span className="min-w-0">
-                          <span className="mb-1.5 flex flex-wrap items-center gap-2">
+                          <span className="mb-1 flex flex-wrap items-center gap-2">
                             <span className="font-medium text-slate-900">{risk.title}</span>
                             <Badge
                               variant="outline"
@@ -331,7 +322,7 @@ const DemoPage = () => {
                           <span className="line-clamp-2 text-sm leading-5 text-slate-500">
                             {risk.missingKnowledge}
                           </span>
-                          <span className="mt-2 flex items-center gap-1 text-xs text-slate-400">
+                          <span className="mt-1.5 flex items-center gap-1 text-xs text-slate-400">
                             <FileText className="h-3.5 w-3.5" />
                             {risk.evidenceFiles.length} evidence files
                           </span>
@@ -349,72 +340,11 @@ const DemoPage = () => {
               )}
             </CardContent>
           </Card>
-
-          {selectedRisk && (
-            <Card className="border-violet-200 bg-white shadow-sm">
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-violet-600">
-                      Selected risk
-                    </p>
-                    <CardTitle className="text-xl">{selectedRisk.title}</CardTitle>
-                  </div>
-                  <AlertTriangle className="h-5 w-5 shrink-0 text-amber-500" />
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                    Why this is at risk
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">
-                    {selectedRisk.whyOnlyEmployeeKnows}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                    Evidence
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {selectedRisk.evidenceFiles.map((filename) => (
-                      <Badge
-                        key={filename}
-                        variant="outline"
-                        className="bg-slate-50 font-mono text-[10px] font-normal text-slate-600"
-                      >
-                        {filename}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                {selectedRisk.id === 'vendor-decision' ? (
-                  <Button
-                    onClick={handleStartInterview}
-                    disabled={isStartingInterview || knowledgeDocument !== null}
-                    className="w-full bg-slate-950 hover:bg-slate-800"
-                  >
-                    {isStartingInterview ? (
-                      <Loader2 className="animate-spin" />
-                    ) : (
-                      <MessageSquareText />
-                    )}
-                    {knowledgeDocument ? 'Knowledge captured' : 'Interview Sam about this gap'}
-                    {!knowledgeDocument && <ArrowRight className="ml-auto" />}
-                  </Button>
-                ) : (
-                  <p className="rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-500">
-                    The prepared live interview focuses on the Corvid SMS decision.
-                  </p>
-                )}
-              </CardContent>
-            </Card>
-          )}
         </section>
 
         <aside className="space-y-5 xl:sticky xl:top-5 xl:self-start">
           <Card className="overflow-hidden border-slate-200 shadow-sm">
-            <CardHeader className="border-b border-slate-100 bg-slate-950 text-white">
+            <CardHeader className="border-b border-slate-100 bg-slate-950 p-5 text-white">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/15 text-cyan-300">
                   <BrainCircuit className="h-5 w-5" />
@@ -427,7 +357,7 @@ const DemoPage = () => {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4 p-5">
+            <CardContent className="space-y-4 p-4">
               <div className="flex gap-2">
                 <Input
                   value={question}
@@ -514,6 +444,57 @@ const DemoPage = () => {
               )}
             </CardContent>
           </Card>
+
+          {selectedRisk && !interview && !knowledgeDocument && (
+            <Card className="border-violet-200 bg-white shadow-sm">
+              <CardHeader className="p-5 pb-3">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-violet-600">
+                      Selected gap
+                    </p>
+                    <CardTitle className="text-lg">{selectedRisk.title}</CardTitle>
+                  </div>
+                  <AlertTriangle className="h-5 w-5 shrink-0 text-amber-500" />
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 p-5 pt-0">
+                <p className="text-sm leading-5 text-slate-600">
+                  {selectedRisk.whyOnlyEmployeeKnows}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {selectedRisk.evidenceFiles.map((filename) => (
+                    <Badge
+                      key={filename}
+                      variant="outline"
+                      className="bg-slate-50 font-mono text-[10px] font-normal text-slate-600"
+                    >
+                      {filename}
+                    </Badge>
+                  ))}
+                </div>
+                {selectedRisk.id === 'vendor-decision' ? (
+                  <Button
+                    onClick={handleStartInterview}
+                    disabled={isStartingInterview}
+                    className="w-full bg-slate-950 hover:bg-slate-800"
+                  >
+                    {isStartingInterview ? (
+                      <Loader2 className="animate-spin" />
+                    ) : (
+                      <MessageSquareText />
+                    )}
+                    Interview Sam about this gap
+                    <ArrowRight className="ml-auto" />
+                  </Button>
+                ) : (
+                  <p className="rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-500">
+                    The prepared live interview focuses on the Corvid SMS decision.
+                  </p>
+                )}
+              </CardContent>
+            </Card>
+          )}
 
           {interview && !knowledgeDocument && (
             <Card className="overflow-hidden border-cyan-200 shadow-sm">
@@ -616,12 +597,7 @@ interface MetricProps {
 }
 
 const Metric = ({ value, label, accent = false }: MetricProps) => (
-  <div
-    className={cn(
-      'min-w-20 rounded-xl border px-4 py-3',
-      accent ? 'border-emerald-400/30 bg-emerald-400/10' : 'border-white/10 bg-white/5',
-    )}
-  >
+  <div className={cn('min-w-20 bg-slate-950 px-4 py-2.5', accent && 'bg-emerald-400/10')}>
     <p className={cn('text-lg font-semibold', accent ? 'text-emerald-300' : 'text-white')}>
       {value}
     </p>
@@ -639,13 +615,13 @@ const JourneyStep = ({ number, label, isComplete }: JourneyStepProps) => (
   <div
     className={cn(
       'flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium',
-      isComplete ? 'bg-emerald-50 text-emerald-700' : 'text-slate-500',
+      isComplete ? 'bg-emerald-400/10 text-emerald-300' : 'text-slate-500',
     )}
   >
     <span
       className={cn(
         'flex h-5 w-5 items-center justify-center rounded-full text-[10px]',
-        isComplete ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500',
+        isComplete ? 'bg-emerald-400 text-slate-950' : 'bg-white/10 text-slate-400',
       )}
     >
       {isComplete ? <Check className="h-3 w-3" /> : number}
