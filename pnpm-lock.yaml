@@ -45,7 +45,7 @@ importers:
         version: 3.3.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
       '@nestjs/core':
         specifier: ^11.0.14
-        version: 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+        version: 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/jwt':
         specifier: ^11.0.2
         version: 11.0.2(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))
@@ -57,7 +57,7 @@ importers:
         version: 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)
       '@nestjs/platform-socket.io':
         specifier: ^11.1.11
-        version: 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@11.1.11)(rxjs@7.8.2)
+        version: 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@12.4.0)(rxjs@7.8.2)
       '@nestjs/swagger':
         specifier: ^11.2.5
         version: 11.2.5(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)
@@ -65,8 +65,8 @@ importers:
         specifier: ^6.5.0
         version: 6.5.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(reflect-metadata@0.2.2)
       '@nestjs/websockets':
-        specifier: ^11.1.11
-        version: 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+        specifier: ^12.4.0
+        version: 12.4.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@prisma/adapter-pg':
         specifier: ^7.2.0
         version: 7.2.0
@@ -202,7 +202,7 @@ importers:
         version: 7.1.4
       ts-jest:
         specifier: ^29.2.5
-        version: 29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1)(ts-node@10.9.2(@types/node@22.20.1)(typescript@5.9.3)))(typescript@5.9.3)
+        version: 29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1))(typescript@5.9.3)
       ts-loader:
         specifier: ^9.5.1
         version: 9.5.4(typescript@5.9.3)(webpack@5.103.0)
@@ -395,7 +395,7 @@ importers:
         version: 3.4.19(yaml@2.9.1)
       ts-jest:
         specifier: ^29.4.6
-        version: 29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1)(ts-node@10.9.2(@types/node@22.20.1)(typescript@5.9.3)))(typescript@5.9.3)
+        version: 29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1))(typescript@5.9.3)
       typescript:
         specifier: ^5.5.4
         version: 5.9.3
@@ -772,8 +772,8 @@ packages:
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/code-frame@7.29.0':
-    resolution: {integrity: sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw==}
+  '@babel/code-frame@7.29.7':
+    resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/compat-data@7.28.5':
@@ -816,6 +816,10 @@ packages:
 
   '@babel/helper-validator-identifier@7.28.5':
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/helper-validator-identifier@7.29.7':
+    resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-validator-option@7.27.1':
@@ -926,8 +930,8 @@ packages:
     resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/runtime@7.29.2':
-    resolution: {integrity: sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g==}
+  '@babel/runtime@7.29.13':
+    resolution: {integrity: sha512-v+oN26xP4YIlQsbQ/CbTH1WG5m/l/DjKKZNy/Kp3f/AFvbgt7Em/D0FeMM3O2hX0YzeN2M16W8lOpyhIkfCBcQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.2':
@@ -1195,89 +1199,105 @@ packages:
     resolution: {integrity: sha512-excjX8DfsIcJ10x1Kzr4RcWe1edC9PquDRRPx3YVCvQv+U5p7Yin2s32ftzikXojb1PIFc/9Mt28/y+iRklkrw==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-arm@1.2.4':
     resolution: {integrity: sha512-bFI7xcKFELdiNCVov8e44Ia4u2byA+l3XtsAj+Q8tfCwO6BQ8iDojYdvoPMqsKDkuoOo+X6HZA0s0q11ANMQ8A==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-ppc64@1.2.4':
     resolution: {integrity: sha512-FMuvGijLDYG6lW+b/UvyilUWu5Ayu+3r2d1S8notiGCIyYU/76eig1UfMmkZ7vwgOrzKzlQbFSuQfgm7GYUPpA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-riscv64@1.2.4':
     resolution: {integrity: sha512-oVDbcR4zUC0ce82teubSm+x6ETixtKZBh/qbREIOcI3cULzDyb18Sr/Wcyx7NRQeQzOiHTNbZFF1UwPS2scyGA==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-s390x@1.2.4':
     resolution: {integrity: sha512-qmp9VrzgPgMoGZyPvrQHqk02uyjA0/QrTO26Tqk6l4ZV0MPWIW6LTkqOIov+J1yEu7MbFQaDpwdwJKhbJvuRxQ==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-x64@1.2.4':
     resolution: {integrity: sha512-tJxiiLsmHc9Ax1bz3oaOYBURTXGIRDODBqhveVHonrHJ9/+k89qbLl0bcJns+e4t4rvaNBxaEZsFtSfAdquPrw==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linuxmusl-arm64@1.2.4':
     resolution: {integrity: sha512-FVQHuwx1IIuNow9QAbYUzJ+En8KcVm9Lk5+uGUQJHaZmMECZmOlix9HnH7n1TRkXMS0pGxIJokIVB9SuqZGGXw==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-libvips-linuxmusl-x64@1.2.4':
     resolution: {integrity: sha512-+LpyBk7L44ZIXwz/VYfglaX/okxezESc6UxDSoyo2Ks6Jxc4Y7sGjpgU9s4PMgqgjj1gZCylTieNamqA1MF7Dg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-linux-arm64@0.34.5':
     resolution: {integrity: sha512-bKQzaJRY/bkPOXyKx5EVup7qkaojECG6NLYswgktOZjaXecSAeCWiZwwiFf3/Y+O1HrauiE3FVsGxFg8c24rZg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-arm@0.34.5':
     resolution: {integrity: sha512-9dLqsvwtg1uuXBGZKsxem9595+ujv0sJ6Vi8wcTANSFpwV/GONat5eCkzQo/1O6zRIkh0m/8+5BjrRr7jDUSZw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-ppc64@0.34.5':
     resolution: {integrity: sha512-7zznwNaqW6YtsfrGGDA6BRkISKAAE1Jo0QdpNYXNMHu2+0dTrPflTLNkpc8l7MUP5M16ZJcUvysVWWrMefZquA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-riscv64@0.34.5':
     resolution: {integrity: sha512-51gJuLPTKa7piYPaVs8GmByo7/U7/7TZOq+cnXJIHZKavIRHAP77e3N2HEl3dgiqdD/w0yUfiJnII77PuDDFdw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-s390x@0.34.5':
     resolution: {integrity: sha512-nQtCk0PdKfho3eC5MrbQoigJ2gd1CgddUMkabUj+rBevs8tZ2cULOx46E7oyX+04WGfABgIwmMC0VqieTiR4jg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-x64@0.34.5':
     resolution: {integrity: sha512-MEzd8HPKxVxVenwAa+JRPwEC7QFjoPWuS5NZnBt6B3pu7EG2Ge0id1oLHZpPJdn3OQK+BQDiw9zStiHBTJQQQQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linuxmusl-arm64@0.34.5':
     resolution: {integrity: sha512-fprJR6GtRsMt6Kyfq44IsChVZeGN97gTD331weR1ex1c1rypDEABN6Tm2xa1wE6lYb5DdEnk03NZPqA7Id21yg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-linuxmusl-x64@0.34.5':
     resolution: {integrity: sha512-Jg8wNT1MUzIvhBFxViqrEhWDGzqymo3sV7z7ZsaWbZNDLXRJZoRGrjulp60YYtV4wfY8VIKcWidjojlLcWrd8Q==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-wasm32@0.34.5':
     resolution: {integrity: sha512-OdWTEiVkY2PHwqkbBI8frFxQQFekHaSSkUIJkwzclWZe64O1X4UlUjqqqLaPbUpMOQk6FBu/HtlGXNblIs0huw==}
@@ -1725,12 +1745,12 @@ packages:
       '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
       reflect-metadata: ^0.1.13 || ^0.2.0
 
-  '@nestjs/websockets@11.1.11':
-    resolution: {integrity: sha512-apuP7C/gtMBIYNgA8IWt75GTZeWya5JQCnrLZFcOu+IZt00j9Xd/Bm7hbj/Qr/JVoM/7q6c/4p4oOZtBGx4aeA==}
+  '@nestjs/websockets@12.4.0':
+    resolution: {integrity: sha512-j3GjTKSeiD+ruJKyZEzpc9qksUjGB6Hx6nslbuv2gDlLhBFRzzyaIVhirf5HgY/Vf0ynB43x/K+rY5iZL6Bc3g==}
     peerDependencies:
-      '@nestjs/common': ^11.0.0
-      '@nestjs/core': ^11.0.0
-      '@nestjs/platform-socket.io': ^11.0.0
+      '@nestjs/common': ^12.0.0
+      '@nestjs/core': ^12.0.0
+      '@nestjs/platform-socket.io': ^12.0.0
       reflect-metadata: ^0.1.12 || ^0.2.0
       rxjs: ^7.1.0
     peerDependenciesMeta:
@@ -1760,24 +1780,28 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-arm64-musl@16.1.1':
     resolution: {integrity: sha512-MFHrgL4TXNQbBPzkKKur4Fb5ICEJa87HM7fczFs2+HWblM7mMLdco3dvyTI+QmLBU9xgns/EeeINSZD6Ar+oLg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-linux-x64-gnu@16.1.1':
     resolution: {integrity: sha512-20bYDfgOQAPUkkKBnyP9PTuHiJGM7HzNBbuqmD0jiFVZ0aOldz+VnJhbxzjcSabYsnNjMPsE0cyzEudpYxsrUQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-x64-musl@16.1.1':
     resolution: {integrity: sha512-9pRbK3M4asAHQRkwaXwu601oPZHghuSC8IXNENgbBSyImHv/zY4K5udBusgdHkvJ/Tcr96jJwQYOll0qU8+fPA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-win32-arm64-msvc@16.1.1':
     resolution: {integrity: sha512-bdfQkggaLgnmYrFkSQfsHfOhk/mCYmjnrbRCGgkMcoOBZ4n+TRRSLmT/CU5SATzlBJ9TpioUyBW/vWFXTqQRiA==}
@@ -2609,12 +2633,16 @@ packages:
   '@smithy/smithy-client@4.10.1':
     resolution: {integrity: sha512-1ovWdxzYprhq+mWqiGZlt3kF69LJthuQcfY9BIyHx9MywTFKzFapluku1QXoaBB43GCsLDxNqS+1v30ure69AA==}
     engines: {node: '>=18.0.0'}
-    deprecated: Deprecated due to a bug in custom logger data redaction. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with
+        this version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/smithy-client@4.10.12':
     resolution: {integrity: sha512-VKO/HKoQ5OrSHW6AJUmEnUKeXI1/5LfCwO9cwyao7CmLvGnZeM1i36Lyful3LK1XU7HwTVieTqO1y2C/6t3qtA==}
     engines: {node: '>=18.0.0'}
-    deprecated: Deprecated due to a bug in custom logger data redaction. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with
+        this version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/types@4.10.0':
     resolution: {integrity: sha512-K9mY7V/f3Ul+/Gz4LJANZ3vJ/yiBIwCyxe0sPT4vNJK63Srvd+Yk1IzP0t+nE7XFSpIGtzR71yljtnqpUTYFlQ==}
@@ -3342,41 +3370,49 @@ packages:
     resolution: {integrity: sha512-34gw7PjDGB9JgePJEmhEqBhWvCiiWCuXsL9hYphDF7crW7UgI05gyBAi6MF58uGcMOiOqSJ2ybEeCvHcq0BCmQ==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-arm64-musl@1.11.1':
     resolution: {integrity: sha512-RyMIx6Uf53hhOtJDIamSbTskA99sPHS96wxVE/bJtePJJtpdKGXO1wY90oRdXuYOGOTuqjT8ACccMc4K6QmT3w==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-ppc64-gnu@1.11.1':
     resolution: {integrity: sha512-D8Vae74A4/a+mZH0FbOkFJL9DSK2R6TFPC9M+jCWYia/q2einCubX10pecpDiTmkJVUH+y8K3BZClycD8nCShA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-gnu@1.11.1':
     resolution: {integrity: sha512-frxL4OrzOWVVsOc96+V3aqTIQl1O2TjgExV4EKgRY09AJ9leZpEg8Ak9phadbuX0BA4k8U5qtvMSQQGGmaJqcQ==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-musl@1.11.1':
     resolution: {integrity: sha512-mJ5vuDaIZ+l/acv01sHoXfpnyrNKOk/3aDoEdLO/Xtn9HuZlDD6jKxHlkN8ZhWyLJsRBxfv9GYM2utQ1SChKew==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-s390x-gnu@1.11.1':
     resolution: {integrity: sha512-kELo8ebBVtb9sA7rMe1Cph4QHreByhaZ2QEADd9NzIQsYNQpt9UkM9iqr2lhGr5afh885d/cB5QeTXSbZHTYPg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-gnu@1.11.1':
     resolution: {integrity: sha512-C3ZAHugKgovV5YvAMsxhq0gtXuwESUKc5MhEtjBpLoHPLYM+iuwSj3lflFwK3DPm68660rZ7G8BMcwSro7hD5w==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-musl@1.11.1':
     resolution: {integrity: sha512-rV0YSoyhK2nZ4vEswT/QwqzqQXw5I6CjoaYMOX0TqBlWhojUf8P94mvI7nuJTeaCkkds3QE4+zS8Ko+GdXuZtA==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-wasm32-wasi@1.11.1':
     resolution: {integrity: sha512-5u4RkfxJm+Ng7IWgkzi3qrFOvLvQYnPBmjmZQ8+szTK/b31fQCnleNl1GgEt7nIsZRIf5PLhPwT0WM+q45x/UQ==}
@@ -5682,6 +5718,7 @@ packages:
 
   node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
+    deprecated: This package is no longer needed on supported Node.js versions. Node.js 16+ includes AbortController and AbortSignal as built-in globals. All Node.js versions requiring this polyfill are end-of-life. Use the built-in globals instead.
 
   node-addon-api@8.5.0:
     resolution: {integrity: sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==}
@@ -6866,6 +6903,9 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
+  tslib@2.9.1:
+    resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
+
   turbo@2.9.12:
     resolution: {integrity: sha512-lCPgus1NuTiBdaITWqzSH/Ff6HVL8HHGBtOXHg1dHRfcshN79XkygSdh0M6g8b0td91ILLG5MTkLOkp5UvyPJw==}
     hasBin: true
@@ -7311,13 +7351,13 @@ snapshots:
     dependencies:
       '@aws-crypto/util': 5.2.0
       '@aws-sdk/types': 3.973.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-crypto/crc32c@5.2.0':
     dependencies:
       '@aws-crypto/util': 5.2.0
       '@aws-sdk/types': 3.973.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-crypto/sha1-browser@5.2.0':
     dependencies:
@@ -7346,13 +7386,13 @@ snapshots:
 
   '@aws-crypto/supports-web-crypto@5.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-crypto/util@5.2.0':
     dependencies:
       '@aws-sdk/types': 3.973.0
       '@smithy/util-utf8': 2.3.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/client-s3@3.974.0':
     dependencies:
@@ -7455,7 +7495,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.6
       '@smithy/util-retry': 4.2.6
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7498,7 +7538,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.7
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7541,7 +7581,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.8
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7559,7 +7599,7 @@ snapshots:
       '@smithy/util-base64': 4.3.0
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/core@3.972.0':
     dependencies:
@@ -7575,7 +7615,7 @@ snapshots:
       '@smithy/util-base64': 4.3.0
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/core@3.973.0':
     dependencies:
@@ -7596,7 +7636,7 @@ snapshots:
   '@aws-sdk/crc64-nvme@3.972.0':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-env@3.954.0':
     dependencies:
@@ -7604,7 +7644,7 @@ snapshots:
       '@aws-sdk/types': 3.953.0
       '@smithy/property-provider': 4.2.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-env@3.972.1':
     dependencies:
@@ -7612,7 +7652,7 @@ snapshots:
       '@aws-sdk/types': 3.973.0
       '@smithy/property-provider': 4.2.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-http@3.954.0':
     dependencies:
@@ -7625,7 +7665,7 @@ snapshots:
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
       '@smithy/util-stream': 4.5.10
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-http@3.972.1':
     dependencies:
@@ -7638,7 +7678,7 @@ snapshots:
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
       '@smithy/util-stream': 4.5.10
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-ini@3.954.0':
     dependencies:
@@ -7655,7 +7695,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7674,7 +7714,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7687,7 +7727,7 @@ snapshots:
       '@smithy/protocol-http': 5.3.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7700,7 +7740,7 @@ snapshots:
       '@smithy/protocol-http': 5.3.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7717,7 +7757,7 @@ snapshots:
       '@smithy/property-provider': 4.2.6
       '@smithy/shared-ini-file-loader': 4.4.1
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7745,7 +7785,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-process@3.972.1':
     dependencies:
@@ -7754,7 +7794,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/credential-provider-sso@3.954.0':
     dependencies:
@@ -7765,7 +7805,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7778,7 +7818,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7790,7 +7830,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7802,7 +7842,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -7845,7 +7885,7 @@ snapshots:
       '@aws-sdk/types': 3.953.0
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-host-header@3.972.1':
     dependencies:
@@ -7864,7 +7904,7 @@ snapshots:
     dependencies:
       '@aws-sdk/types': 3.953.0
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-logger@3.972.1':
     dependencies:
@@ -7878,7 +7918,7 @@ snapshots:
       '@aws/lambda-invoke-store': 0.2.2
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-recursion-detection@3.972.1':
     dependencies:
@@ -7903,7 +7943,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-stream': 4.5.10
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-sdk-s3@3.972.0':
     dependencies:
@@ -7920,7 +7960,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-stream': 4.5.10
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-sdk-s3@3.972.1':
     dependencies:
@@ -7953,7 +7993,7 @@ snapshots:
       '@smithy/core': 3.21.1
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/middleware-user-agent@3.972.1':
     dependencies:
@@ -8004,7 +8044,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.7
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -8047,7 +8087,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.8
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -8057,7 +8097,7 @@ snapshots:
       '@smithy/config-resolver': 4.4.5
       '@smithy/node-config-provider': 4.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/region-config-resolver@3.972.1':
     dependencies:
@@ -8085,7 +8125,7 @@ snapshots:
       '@smithy/protocol-http': 5.3.8
       '@smithy/signature-v4': 5.3.6
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/signature-v4-multi-region@3.972.0':
     dependencies:
@@ -8104,7 +8144,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -8116,19 +8156,19 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/shared-ini-file-loader': 4.4.3
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     transitivePeerDependencies:
       - aws-crt
 
   '@aws-sdk/types@3.953.0':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/types@3.972.0':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/types@3.973.0':
     dependencies:
@@ -8137,15 +8177,15 @@ snapshots:
 
   '@aws-sdk/util-arn-parser@3.953.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-arn-parser@3.972.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-arn-parser@3.972.1':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-endpoints@3.953.0':
     dependencies:
@@ -8153,7 +8193,7 @@ snapshots:
       '@smithy/types': 4.12.0
       '@smithy/url-parser': 4.2.8
       '@smithy/util-endpoints': 3.2.7
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-endpoints@3.972.0':
     dependencies:
@@ -8172,14 +8212,14 @@ snapshots:
 
   '@aws-sdk/util-locate-window@3.953.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-user-agent-browser@3.953.0':
     dependencies:
       '@aws-sdk/types': 3.953.0
       '@smithy/types': 4.12.0
       bowser: 2.13.1
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-user-agent-browser@3.972.1':
     dependencies:
@@ -8194,7 +8234,7 @@ snapshots:
       '@aws-sdk/types': 3.953.0
       '@smithy/node-config-provider': 4.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/util-user-agent-node@3.972.1':
     dependencies:
@@ -8208,19 +8248,19 @@ snapshots:
     dependencies:
       '@smithy/types': 4.12.0
       fast-xml-parser: 5.2.5
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/xml-builder@3.972.0':
     dependencies:
       '@smithy/types': 4.12.0
       fast-xml-parser: 5.2.5
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws-sdk/xml-builder@3.972.1':
     dependencies:
       '@smithy/types': 4.12.0
       fast-xml-parser: 5.2.5
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@aws/lambda-invoke-store@0.2.2': {}
 
@@ -8230,9 +8270,9 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
-  '@babel/code-frame@7.29.0':
+  '@babel/code-frame@7.29.7':
     dependencies:
-      '@babel/helper-validator-identifier': 7.28.5
+      '@babel/helper-validator-identifier': 7.29.7
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
@@ -8297,6 +8337,8 @@ snapshots:
   '@babel/helper-string-parser@7.27.1': {}
 
   '@babel/helper-validator-identifier@7.28.5': {}
+
+  '@babel/helper-validator-identifier@7.29.7': {}
 
   '@babel/helper-validator-option@7.27.1': {}
 
@@ -8396,7 +8438,7 @@ snapshots:
 
   '@babel/runtime@7.28.4': {}
 
-  '@babel/runtime@7.29.2': {}
+  '@babel/runtime@7.29.13': {}
 
   '@babel/template@7.27.2':
     dependencies:
@@ -8508,17 +8550,17 @@ snapshots:
   '@emnapi/core@1.7.1':
     dependencies:
       '@emnapi/wasi-threads': 1.1.0
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@emnapi/runtime@1.7.1':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@emnapi/wasi-threads@1.1.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@eslint-community/eslint-utils@4.9.0(eslint@8.57.1)':
@@ -9196,7 +9238,7 @@ snapshots:
       lodash: 4.17.21
       rxjs: 7.8.2
 
-  '@nestjs/core@11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
+  '@nestjs/core@11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nuxt/opencollective': 0.4.1
@@ -9209,7 +9251,7 @@ snapshots:
       uid: 2.0.2
     optionalDependencies:
       '@nestjs/platform-express': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)
-      '@nestjs/websockets': 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/websockets': 12.4.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
   '@nestjs/jwt@11.0.2(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))':
     dependencies:
@@ -9233,7 +9275,7 @@ snapshots:
   '@nestjs/platform-express@11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       cors: 2.8.5
       express: 5.1.0
       multer: 2.0.2
@@ -9242,10 +9284,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/platform-socket.io@11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@11.1.11)(rxjs@7.8.2)':
+  '@nestjs/platform-socket.io@11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@12.4.0)(rxjs@7.8.2)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/websockets': 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/websockets': 12.4.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       rxjs: 7.8.2
       socket.io: 4.8.3
       tslib: 2.8.1
@@ -9269,7 +9311,7 @@ snapshots:
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/mapped-types': 2.1.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)
       js-yaml: 4.1.1
       lodash: 4.17.21
@@ -9283,7 +9325,7 @@ snapshots:
   '@nestjs/testing@11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-express@11.1.9)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       tslib: 2.8.1
     optionalDependencies:
       '@nestjs/platform-express': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)
@@ -9291,20 +9333,20 @@ snapshots:
   '@nestjs/throttler@6.5.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(reflect-metadata@0.2.2)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       reflect-metadata: 0.2.2
 
-  '@nestjs/websockets@11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
+  '@nestjs/websockets@12.4.0(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.9)(@nestjs/platform-socket.io@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
       '@nestjs/common': 11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@11.1.11)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.9(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.9)(@nestjs/websockets@12.4.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       iterare: 1.2.1
       object-hash: 3.0.0
       reflect-metadata: 0.2.2
       rxjs: 7.8.2
-      tslib: 2.8.1
+      tslib: 2.9.1
     optionalDependencies:
-      '@nestjs/platform-socket.io': 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@11.1.11)(rxjs@7.8.2)
+      '@nestjs/platform-socket.io': 11.1.11(@nestjs/common@11.1.9(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/websockets@12.4.0)(rxjs@7.8.2)
 
   '@next/env@16.1.1': {}
 
@@ -9937,21 +9979,21 @@ snapshots:
   '@smithy/abort-controller@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/abort-controller@4.2.8':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/chunked-blob-reader-native@4.2.1':
     dependencies:
       '@smithy/util-base64': 4.3.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/chunked-blob-reader@5.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/config-resolver@4.4.4':
     dependencies:
@@ -9960,7 +10002,7 @@ snapshots:
       '@smithy/util-config-provider': 4.2.0
       '@smithy/util-endpoints': 3.2.7
       '@smithy/util-middleware': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/config-resolver@4.4.5':
     dependencies:
@@ -9969,7 +10011,7 @@ snapshots:
       '@smithy/util-config-provider': 4.2.0
       '@smithy/util-endpoints': 3.2.7
       '@smithy/util-middleware': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/config-resolver@4.4.6':
     dependencies:
@@ -9991,7 +10033,7 @@ snapshots:
       '@smithy/util-stream': 4.5.10
       '@smithy/util-utf8': 4.2.0
       '@smithy/uuid': 1.1.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/core@3.21.1':
     dependencies:
@@ -10012,7 +10054,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/types': 4.12.0
       '@smithy/url-parser': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/credential-provider-imds@4.2.7':
     dependencies:
@@ -10020,7 +10062,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/types': 4.12.0
       '@smithy/url-parser': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/credential-provider-imds@4.2.8':
     dependencies:
@@ -10028,14 +10070,14 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/types': 4.12.0
       '@smithy/url-parser': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/eventstream-codec@4.2.8':
     dependencies:
       '@aws-crypto/crc32': 5.2.0
       '@smithy/types': 4.12.0
       '@smithy/util-hex-encoding': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/eventstream-serde-browser@4.2.8':
     dependencies:
@@ -10058,7 +10100,7 @@ snapshots:
     dependencies:
       '@smithy/eventstream-codec': 4.2.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/fetch-http-handler@5.3.7':
     dependencies:
@@ -10066,7 +10108,7 @@ snapshots:
       '@smithy/querystring-builder': 4.2.6
       '@smithy/types': 4.12.0
       '@smithy/util-base64': 4.3.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/fetch-http-handler@5.3.9':
     dependencies:
@@ -10088,14 +10130,14 @@ snapshots:
       '@smithy/types': 4.12.0
       '@smithy/util-buffer-from': 4.2.0
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/hash-node@4.2.7':
     dependencies:
       '@smithy/types': 4.12.0
       '@smithy/util-buffer-from': 4.2.0
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/hash-node@4.2.8':
     dependencies:
@@ -10113,12 +10155,12 @@ snapshots:
   '@smithy/invalid-dependency@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/invalid-dependency@4.2.7':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/invalid-dependency@4.2.8':
     dependencies:
@@ -10127,11 +10169,11 @@ snapshots:
 
   '@smithy/is-array-buffer@2.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/is-array-buffer@4.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/md5-js@4.2.8':
     dependencies:
@@ -10143,13 +10185,13 @@ snapshots:
     dependencies:
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-content-length@4.2.7':
     dependencies:
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-content-length@4.2.8':
     dependencies:
@@ -10166,7 +10208,7 @@ snapshots:
       '@smithy/types': 4.12.0
       '@smithy/url-parser': 4.2.8
       '@smithy/util-middleware': 4.2.8
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-endpoint@4.4.11':
     dependencies:
@@ -10189,7 +10231,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.7
       '@smithy/uuid': 1.1.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-retry@4.4.17':
     dependencies:
@@ -10201,7 +10243,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-retry': 4.2.7
       '@smithy/uuid': 1.1.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-retry@4.4.27':
     dependencies:
@@ -10219,7 +10261,7 @@ snapshots:
     dependencies:
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-serde@4.2.9':
     dependencies:
@@ -10230,7 +10272,7 @@ snapshots:
   '@smithy/middleware-stack@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/middleware-stack@4.2.8':
     dependencies:
@@ -10242,7 +10284,7 @@ snapshots:
       '@smithy/property-provider': 4.2.6
       '@smithy/shared-ini-file-loader': 4.4.1
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/node-config-provider@4.3.8':
     dependencies:
@@ -10257,7 +10299,7 @@ snapshots:
       '@smithy/protocol-http': 5.3.8
       '@smithy/querystring-builder': 4.2.6
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/node-http-handler@4.4.8':
     dependencies:
@@ -10270,17 +10312,17 @@ snapshots:
   '@smithy/property-provider@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/property-provider@4.2.8':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/protocol-http@5.3.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/protocol-http@5.3.8':
     dependencies:
@@ -10291,23 +10333,23 @@ snapshots:
     dependencies:
       '@smithy/types': 4.12.0
       '@smithy/util-uri-escape': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/querystring-builder@4.2.8':
     dependencies:
       '@smithy/types': 4.12.0
       '@smithy/util-uri-escape': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/querystring-parser@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/querystring-parser@4.2.8':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/service-error-classification@4.2.6':
     dependencies:
@@ -10324,12 +10366,12 @@ snapshots:
   '@smithy/shared-ini-file-loader@4.4.1':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/shared-ini-file-loader@4.4.3':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/signature-v4@5.3.6':
     dependencies:
@@ -10340,7 +10382,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-uri-escape': 4.2.0
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/signature-v4@5.3.8':
     dependencies:
@@ -10351,7 +10393,7 @@ snapshots:
       '@smithy/util-middleware': 4.2.8
       '@smithy/util-uri-escape': 4.2.0
       '@smithy/util-utf8': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/smithy-client@4.10.1':
     dependencies:
@@ -10361,7 +10403,7 @@ snapshots:
       '@smithy/protocol-http': 5.3.8
       '@smithy/types': 4.12.0
       '@smithy/util-stream': 4.5.10
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/smithy-client@4.10.12':
     dependencies:
@@ -10375,7 +10417,7 @@ snapshots:
 
   '@smithy/types@4.10.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/types@4.12.0':
     dependencies:
@@ -10385,7 +10427,7 @@ snapshots:
     dependencies:
       '@smithy/querystring-parser': 4.2.6
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/url-parser@4.2.8':
     dependencies:
@@ -10410,30 +10452,30 @@ snapshots:
   '@smithy/util-buffer-from@2.2.0':
     dependencies:
       '@smithy/is-array-buffer': 2.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-buffer-from@4.2.0':
     dependencies:
       '@smithy/is-array-buffer': 4.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-config-provider@4.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-defaults-mode-browser@4.3.15':
     dependencies:
       '@smithy/property-provider': 4.2.6
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-defaults-mode-browser@4.3.16':
     dependencies:
       '@smithy/property-provider': 4.2.8
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-defaults-mode-browser@4.3.26':
     dependencies:
@@ -10450,7 +10492,7 @@ snapshots:
       '@smithy/property-provider': 4.2.6
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-defaults-mode-node@4.2.19':
     dependencies:
@@ -10460,7 +10502,7 @@ snapshots:
       '@smithy/property-provider': 4.2.8
       '@smithy/smithy-client': 4.10.12
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-defaults-mode-node@4.2.29':
     dependencies:
@@ -10476,13 +10518,13 @@ snapshots:
     dependencies:
       '@smithy/node-config-provider': 4.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-endpoints@3.2.7':
     dependencies:
       '@smithy/node-config-provider': 4.3.8
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-endpoints@3.2.8':
     dependencies:
@@ -10492,12 +10534,12 @@ snapshots:
 
   '@smithy/util-hex-encoding@4.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-middleware@4.2.6':
     dependencies:
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-middleware@4.2.8':
     dependencies:
@@ -10508,13 +10550,13 @@ snapshots:
     dependencies:
       '@smithy/service-error-classification': 4.2.6
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-retry@4.2.7':
     dependencies:
       '@smithy/service-error-classification': 4.2.7
       '@smithy/types': 4.12.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-retry@4.2.8':
     dependencies:
@@ -10535,12 +10577,12 @@ snapshots:
 
   '@smithy/util-uri-escape@4.2.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-utf8@2.3.0':
     dependencies:
       '@smithy/util-buffer-from': 2.2.0
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@smithy/util-utf8@4.2.0':
     dependencies:
@@ -10555,7 +10597,7 @@ snapshots:
 
   '@smithy/uuid@1.1.0':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@socket.io/component-emitter@3.1.2': {}
 
@@ -10565,7 +10607,7 @@ snapshots:
 
   '@swc/helpers@0.5.15':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   '@tanstack/query-core@5.90.16': {}
 
@@ -10576,8 +10618,8 @@ snapshots:
 
   '@testing-library/dom@10.4.1':
     dependencies:
-      '@babel/code-frame': 7.29.0
-      '@babel/runtime': 7.29.2
+      '@babel/code-frame': 7.29.7
+      '@babel/runtime': 7.29.13
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       dom-accessibility-api: 0.5.16
@@ -10827,7 +10869,7 @@ snapshots:
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@types/aria-query@5.0.4': {}
@@ -11531,7 +11573,7 @@ snapshots:
 
   aria-hidden@1.2.6:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   aria-query@5.3.0:
     dependencies:
@@ -14745,7 +14787,7 @@ snapshots:
     dependencies:
       react: 19.2.3
       react-style-singleton: 2.2.3(@types/react@19.2.7)(react@19.2.3)
-      tslib: 2.8.1
+      tslib: 2.9.1
     optionalDependencies:
       '@types/react': 19.2.7
 
@@ -14754,7 +14796,7 @@ snapshots:
       react: 19.2.3
       react-remove-scroll-bar: 2.3.8(@types/react@19.2.7)(react@19.2.3)
       react-style-singleton: 2.2.3(@types/react@19.2.7)(react@19.2.3)
-      tslib: 2.8.1
+      tslib: 2.9.1
       use-callback-ref: 1.3.3(@types/react@19.2.7)(react@19.2.3)
       use-sidecar: 1.1.3(@types/react@19.2.7)(react@19.2.3)
     optionalDependencies:
@@ -14764,7 +14806,7 @@ snapshots:
     dependencies:
       get-nonce: 1.0.1
       react: 19.2.3
-      tslib: 2.8.1
+      tslib: 2.9.1
     optionalDependencies:
       '@types/react': 19.2.7
 
@@ -14886,7 +14928,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
 
   rxjs@7.8.2:
     dependencies:
@@ -15476,7 +15518,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-jest@29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1)(ts-node@10.9.2(@types/node@22.20.1)(typescript@5.9.3)))(typescript@5.9.3):
+  ts-jest@29.4.6(@babel/core@7.28.5)(@jest/transform@29.7.0)(@jest/types@30.2.0)(babel-jest@29.7.0(@babel/core@7.28.5))(jest-util@30.2.0)(jest@29.7.0(@types/node@22.20.1))(typescript@5.9.3):
     dependencies:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
@@ -15545,6 +15587,8 @@ snapshots:
       strip-bom: 3.0.0
 
   tslib@2.8.1: {}
+
+  tslib@2.9.1: {}
 
   turbo@2.9.12:
     optionalDependencies:
@@ -15709,7 +15753,7 @@ snapshots:
   use-callback-ref@1.3.3(@types/react@19.2.7)(react@19.2.3):
     dependencies:
       react: 19.2.3
-      tslib: 2.8.1
+      tslib: 2.9.1
     optionalDependencies:
       '@types/react': 19.2.7
 
@@ -15717,7 +15761,7 @@ snapshots:
     dependencies:
       detect-node-es: 1.1.0
       react: 19.2.3
-      tslib: 2.8.1
+      tslib: 2.9.1
     optionalDependencies:
       '@types/react': 19.2.7
 
